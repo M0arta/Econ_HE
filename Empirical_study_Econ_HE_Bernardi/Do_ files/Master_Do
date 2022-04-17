@@ -2,6 +2,19 @@
 
 1) use the three Cleaning do file to import and clean the datasets
 
+run Clean_2014.do
+clear 
+run Clean_2016.do
+clear
+run Clear_enrolment.do
+clear
+
 2) use the append do file to put them together 
 
+run Append_merge.do
+
 3) use the summmary and regression do file to produce tables, graphs and regression estimations
+
+run Sumstat_reg.do 
+
+/*Please note that the assignation of the " Treatment " has been done by copying on Excel the share per region in the two years and manually calculating if there was an increase or a decrease because of lack of familiarity with panel data manipulation */
