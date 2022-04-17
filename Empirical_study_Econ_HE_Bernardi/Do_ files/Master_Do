@@ -1,0 +1,7 @@
+//* Replication cheat *// 
+
+1) use the three Cleaning do file to import and clean the datasets
+
+2) use the append do file to put them together 
+
+3) use the summmary and regression do file to produce tables, graphs and regression estimations
