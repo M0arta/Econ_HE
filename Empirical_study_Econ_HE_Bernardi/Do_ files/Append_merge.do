@@ -75,7 +75,12 @@ foreach var of varlist reg_uni {
 gsort + share_14_reg, gen (rank_14)
 gsort + share_16_reg, gen (rank_16)
 
-by reg_uni (time), sort: gen d = rank_16 -rank_14
+/*Generating a Treatment variable based on Excell calculations of difference between the shares in 2016 and 2014, Treat == 1 if increased and 0 othherwise*/
+
+gen Treat =1 if (reg_uni ==1) |(reg_uni == 3) |(reg_uni == 5) |(reg_uni == 6) |(reg_uni == 8) |(reg_uni == 9) |(reg_uni == 10) |(reg_uni == 11)
+replace Treat = 0  if (reg_uni == 2)|(reg_uni == 4) |(reg_uni == 7) |(reg_uni == 12) |(reg_uni == 13)|(reg_uni == 15)|(reg_uni == 16) |(reg_uni == 17)|(reg_uni == 18)|(reg_uni == 19)|(reg_uni == 20)      
+
+keep if Treat != .
 
 
 /*Generate a variable for being post "treatment" observations or not*/
