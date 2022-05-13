@@ -1,6 +1,15 @@
 /*** Import and clean dataset with number of enrolled student in 2013/2014 and 2016/2017 by each university and merge it with the original dataset using the regional appartenance */
 
-import delimited Enrolled_uni.csv
+clear all 
+set more off 
+capture log close
+global name Do_file1
+
+global root "/home/marta/HE/Data/Raw"
+log using "$root/metric-log-$name.log", replace text 
+
+import delimited "$root/Enrolled_uni.csv", replace
+
  
 /*Rename variables from italian to English*/
 
