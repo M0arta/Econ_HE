@@ -1,6 +1,12 @@
-clear
+clear all 
+set more off 
+capture log close
+global name Do_file1
 
-import delimited 2014_HHs.dat
+global root "/home/marta/HE/Data/Raw"
+log using "$root/metric-log-$name.log", replace text 
+
+import delimited "$root/2014_HHs", replace
 
 /*Drop unuseful string variables */
 
@@ -69,7 +75,7 @@ lab var reg_uni "Region of residence of the HH"
 
 
 /*Generate the Area variable : Nord-west : Piemonte, Valle d'Aosta, Lombardia, Liguria; == 1 
-Nord-est: Trentino-Alto Adige, Veneto, Friuli-Venezia Giulia, Emilia-Romagna; ==2 
+Nord-east: Trentino-Alto Adige, Veneto, Friuli-Venezia Giulia, Emilia-Romagna; ==2 
 Center: Toscana, Umbria, Marche, Lazio; == 3
 South: Abruzzo, Molise, Campania, Puglia, Basilicata, Calabria; == 4 
 Island : Sicilia, Sardegna == 5*/
