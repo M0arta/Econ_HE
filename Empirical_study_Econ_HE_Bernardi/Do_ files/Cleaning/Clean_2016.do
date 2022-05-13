@@ -4,7 +4,7 @@
 clear all 
 set more off 
 capture log close
-global name Do_file1
+global name Do_file2
 
 global root "/home/marta/HE/Data/Raw"
 log using "$root/metric-log-$name.log", replace text 
