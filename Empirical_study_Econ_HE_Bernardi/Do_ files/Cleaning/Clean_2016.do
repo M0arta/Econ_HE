@@ -1,8 +1,16 @@
 *do the same routine for 2018_HHs.dat saving as C_2016_HHs.dta */ 
 
 **# Bookmark #2
+clear all 
+set more off 
+capture log close
+global name Do_file1
 
-import delimited 2016_HHs.dat
+global root "/home/marta/HE/Data/Raw"
+log using "$root/metric-log-$name.log", replace text 
+
+import delimited "$root/2016_HHs", replace
+
 
 /*Drop unuseful string variables */
 
